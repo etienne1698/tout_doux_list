@@ -1,24 +1,20 @@
 {
-  "name": "frontend",
+  "name": "nuxt-app",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "daisyui": "^5.0.22",
+    "nuxt": "^3.16.2",
     "tailwindcss": "^4.1.4",
     "vue": "^3.5.13",
-    "daisyui": "^5.0.22"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.2",
-    "@vue/tsconfig": "^0.7.0",
-    "typescript": "~5.7.2",
-    "vite": "^6.3.0",
-    "vue-tsc": "^2.2.8"
+    "vue-router": "^4.5.0"
   }
 }
