@@ -1,0 +1,29 @@
+{
+  "name": "nodejs_hono",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "migrate": "drizzle-kit generate && drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.1",
+    "@hono/swagger-ui": "^0.5.1",
+    "@hono/zod-validator": "^0.4.3",
+    "@scalar/hono-api-reference": "^0.8.1",
+    "better-auth": "^1.2.7",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.42.0",
+    "drizzle-zod": "^0.7.1",
+    "hono": "^4.7.6",
+    "hono-openapi": "^0.4.6",
+    "pg": "^8.14.1",
+    "zod": "^3.24.2",
+    "zod-openapi": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/pg": "^8.11.13",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.7.1"
+  }
+}
