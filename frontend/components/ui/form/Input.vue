@@ -57,7 +57,9 @@ function focusInput() {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
-
+/**
+This is a hack to prevent input coloration on chrome when email/password autocompleted by the browser 
+*/
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 0s 0s, color 0s 0s;
