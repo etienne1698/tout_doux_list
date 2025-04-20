@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { auth } from "~/common/auth";
+import { auth } from "~/config/auth";
 
 export const authRouter = new Hono();
 
