@@ -26,8 +26,8 @@ const onSubmit = handleSubmit(async ({ email, password }) => {
     <Card class="p-6 w-sm">
       <form @submit="onSubmit">
         <div class="grid gap-2 mb-4">
-          <Input type="email" name="email" label="Email" />
-          <Input type="password" name="password" label="Password" />
+          <Input autocomplete="username" type="email" name="email" label="Email" />
+          <Input autocomplete="current-password" type="password" name="password" label="Password" />
         </div>
         <div class="w-fit">
           <Button type="submit" class="w-full">Submit</Button>

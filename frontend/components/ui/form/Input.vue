@@ -5,6 +5,8 @@ export interface InputProps {
   name: string;
   label?: string;
   type?: HTMLInputElement["type"];
+  // autocomplete?: HTMLInputElement["autocomplete"] // this cause a warning "Expression produces a union type that is too complex to represent."
+  autocomplete?: "current-password" | "username";
 }
 
 const inputRef = ref<HTMLInputElement>();
@@ -43,6 +45,7 @@ function focusInput() {
         :name
         ref="inputRef"
         :type
+        :autocomplete
       />
     </div>
     <ErrorMessage :error-message />
