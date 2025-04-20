@@ -1,11 +1,9 @@
 import { Hono } from "hono";
 import type { AppEnv } from "./config/env";
-import { authGlobalMiddleware } from "./config/auth";
+import { auth, authGlobalMiddleware } from "./config/auth";
 import { cors } from "hono/cors";
 
 export const app = new Hono<AppEnv>();
-
-app.use("*", authGlobalMiddleware);
 
 app.use(
   "*",
@@ -18,3 +16,6 @@ app.use(
     credentials: true,
   })
 );
+
+app.on(["POST", "GET"], "/api/auth/**", (c) => auth.handler(c.req.raw));
+app.use("*", authGlobalMiddleware);

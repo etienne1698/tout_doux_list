@@ -1,5 +1,7 @@
-import { authRouter } from "./api/auth.routes";
 import { app } from "./app";
 import "./config/openapi";
+import "./config/auth";
 
-app.route("/api/auth", authRouter);
+import { tagsRouter } from "./api/tags/tags.routes";
+
+app.route("/api/tags", tagsRouter);

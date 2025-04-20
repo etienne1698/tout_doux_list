@@ -2,6 +2,8 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "./db";
 import { createMiddleware } from "hono/factory";
+import { Hono } from "hono";
+import { app } from "~/app";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
