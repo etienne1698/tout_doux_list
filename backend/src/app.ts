@@ -8,7 +8,7 @@ export const app = new Hono<AppEnv>();
 app.use(
   "*",
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [process.env.FRONTEND_URL!, process.env.URL!],
     allowHeaders: ["Content-Type", "Authorization"],
     allowMethods: ["POST", "GET", "OPTIONS"],
     exposeHeaders: ["Content-Length"],

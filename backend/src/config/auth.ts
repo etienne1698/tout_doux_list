@@ -12,7 +12,7 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  trustedOrigins: ["http://localhost:3000", "http://localhost:3001"],
+  trustedOrigins: [process.env.FRONTEND_URL!, process.env.URL!],
   advanced: {
     crossSubDomainCookies: {
       enabled: true,
