@@ -1,11 +1,14 @@
 import { joinURL } from "ufo";
 
 export default defineEventHandler(async (event) => {
-  const proxyUrl = useRuntimeConfig().public.apiURL;
+  const proxyUrl = "http://localhost:3000";
 
-  const path = event.path.replace(/^\/api\//, ""); 
-  
+  //const path = event.path.replace(/^\/api\//, "");
+  const path = event.path;
+
   const target = joinURL(proxyUrl, path);
 
-  return proxyRequest(event, target);
+  console.error(target);
+
+  return proxyRequest(event, target, { headers: { origin: proxyUrl } });
 });

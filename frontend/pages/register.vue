@@ -7,17 +7,15 @@ import { authClient } from "~/lib/auth-client";
 const validationSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+  name: z.string().min(4),
 });
 
 const { handleSubmit } = useForm<z.infer<typeof validationSchema>>({
   validationSchema: toTypedSchema(validationSchema),
 });
 
-const onSubmit = handleSubmit(async ({ email, password }) => {
-  const { data, error } = await authClient.signIn.email({
-    email,
-    password,
-  });
+const onSubmit = handleSubmit(async (formData) => {
+  const { data, error } = await authClient.signUp.email(formData);
 });
 </script>
 
@@ -26,6 +24,7 @@ const onSubmit = handleSubmit(async ({ email, password }) => {
     <Card class="p-6 w-sm">
       <form @submit="onSubmit">
         <div class="grid gap-2 mb-4">
+          <Input name="name" label="name" />
           <Input type="email" name="email" label="Email" />
           <Input type="password" name="password" label="Password" />
         </div>
