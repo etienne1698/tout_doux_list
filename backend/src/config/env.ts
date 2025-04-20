@@ -1,8 +1,8 @@
-import type { auth } from "./auth";
+import type { auth, Auth } from "./auth";
 
 export interface AppEnv {
   Variables: {
-    user: typeof auth.$Infer.Session.user | null;
+    user: Auth | null;
     session: typeof auth.$Infer.Session.session | null;
   };
 }

@@ -18,6 +18,8 @@ export const auth = betterAuth({
   },
 });
 
+export type Auth = typeof auth.$Infer.Session.user;
+
 export const authGlobalMiddleware = createMiddleware(async (c, next) => {
   const session = await auth.api.getSession({ headers: c.req.raw.headers });
 
