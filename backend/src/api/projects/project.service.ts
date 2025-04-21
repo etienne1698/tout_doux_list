@@ -12,7 +12,7 @@ export default {
         project: true,
       },
     });
-    return projects;
+    return projects.map(res => res.project);
   },
   async create(auth: Auth) {
     return await db.transaction(async (tx) => {

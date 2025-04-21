@@ -5,7 +5,9 @@ import { swaggerUI } from "@hono/swagger-ui";
 
 import "zod-openapi/extend";
 
-export enum OpenApiTags {}
+export enum OpenApiTags {
+  PROJECT = "Project",
+}
 
 const OPENAPI_URL = "/openapi.json";
 
