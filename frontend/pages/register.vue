@@ -10,13 +10,13 @@ const validationSchema = z.object({
   name: z.string().min(4),
 });
 
+const { register } = useAuth();
+
 const { handleSubmit } = useForm<z.infer<typeof validationSchema>>({
   validationSchema: toTypedSchema(validationSchema),
 });
 
-const onSubmit = handleSubmit(async (formData) => {
-  const { data, error } = await authClient.signUp.email(formData);
-});
+const onSubmit = handleSubmit(register);
 </script>
 
 <template>
